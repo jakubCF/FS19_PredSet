@@ -5,8 +5,187 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FS19_PredSet"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="FS19 PRED SET" Height="620" Width="800" ResizeMode="NoResize" WindowStyle="None" Icon="icons/fs19predsetlogo.png">
+    <Window.Resources>
+        <TextEffectCollection x:Key="TextEffectCollection1"/>
+    </Window.Resources>
     <Grid>
-        
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF162236" Offset="0"/>
+                <GradientStop Color="#FF364866" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition  Height="30"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="60" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="10" />
+        </Grid.ColumnDefinitions>
+
+        <Grid Background="#FF22222D" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4" MouseDown="Titlebar_MouseDown">
+            <Image Source="icons/fs19predsetlogo.png" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5"></Image>
+            <TextBlock Foreground="white" Margin="30,5" Text="FS19 PredSet" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Button x:Name="Btn_minimize" VerticalAlignment="Center" HorizontalAlignment="Right" Width="20" Height="20" Margin="10,0,35,0" Background="#FF303044" BorderBrush="#00000000" Foreground="White" Template="{DynamicResource ButtonMenuTemplate}" Cursor="Hand" Click="Btn_minimize_Click">
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" FontFamily="Lucida Sans" >_</TextBlock>
+            </Button>
+            <Button x:Name="btn_close" VerticalAlignment="Center" HorizontalAlignment="Right" Width="20" Height="20" Click="btn_close_Click" Margin="10,0" Background="#FF303044" BorderBrush="#00000000" Foreground="White" Template="{DynamicResource ButtonMenuTemplate}" Cursor="Hand">
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" FontFamily="Lucida Sans" >X</TextBlock>
+            </Button>
+        </Grid>
+
+        <Grid Background="#FF22222D" Grid.Column="0" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Button x:Name="interface_button" Grid.Row="1" Background="#FF22222D" BorderBrush="{x:Null}" Click="interface_btn_Click" Template="{DynamicResource ButtonMenuTemplate}" Margin="0,10,0,10">
+                <Image Source="icons/icons8-bookmark-white.png" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0"/>
+
+            </Button>
+            <Button x:Name="settings_button" Grid.Row="2" Background="#FF22222D" BorderBrush="{x:Null}" Click="settings_btn_Click" Template="{DynamicResource ButtonMenuTemplate}" Margin="0,10,0,10" Cursor="Hand">
+
+                <Image Source="icons/icons-settings-white.png" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0"/>
+
+            </Button>
+            <Button x:Name="credits_button" Grid.Row="3" Background="#FF22222D" BorderBrush="{x:Null}" Click="credits_btn_Click" Template="{DynamicResource ButtonMenuTemplate}" Margin="0,10,0,10">
+                <Image Source="icons/icons8-mastercard-white.png" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0"/>
+            </Button>
+        </Grid>
+
+        <Grid Grid.Column="1"  Grid.Row="1" Margin="12,0,0,0">
+            <StackPanel x:Name="buttons_preddef" Visibility="Visible">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="5" />
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="20" />
+                    </Grid.RowDefinitions>
+
+
+                    <Button x:Name="btn_1set" Grid.Row="2" Margin="0,5" Height="75" Width="105" Template="{DynamicResource ButtonSettingTemplate}" Cursor="Hand" Background="#FF637595" Click="btn_1set_Click">
+                        Some long text in first
+                    </Button>
+                    <Button x:Name="btn_2set" Grid.Row="3" Margin="0,5" Height="75" Width="105" Template="{DynamicResource ButtonSettingTemplate}" Cursor="Hand" Background="#FF637595" Click="btn_2set_Click">
+                        Some long text in second
+                    </Button>
+                    <Button x:Name="btn_3set" Grid.Row="4" Margin="0,5" Height="75" Width="105" Template="{DynamicResource ButtonSettingTemplate}" Cursor="Hand" Background="#FF637595" Click="btn_3set_Click">
+                        Third that is very long
+                    </Button>
+                    <Button x:Name="btn_4set" Grid.Row="5" Margin="0,5" Height="75" Width="105" Template="{DynamicResource ButtonSettingTemplate}" Cursor="Hand" Background="#FF637595" Click="btn_4set_Click">
+                        Third that is very long
+                    </Button>
+                    <Button x:Name="btn_5set" Grid.Row="6" Margin="0,5" Height="70" Width="100" Template="{DynamicResource ButtonSettingTemplate}" Click="btn_5set_Click" Cursor="Hand" Background="#FF637595">Fifth</Button>
+                    <Button x:Name="btn_6set" Grid.Row="7" Margin="0,5" Height="70" Width="100" Template="{DynamicResource ButtonSettingTemplate}" Cursor="Hand" Background="#FF637595" Click="btn_6set_Click">Sixth looong text with gradient</Button>
+                    <Button x:Name="btn_7set" Grid.Row="8" Margin="0,5" Height="70" Width="100" Template="{DynamicResource ButtonSettingTemplate}" Cursor="Hand" Background="#FF637595" Click="btn_7set_Click">Seventh</Button>
+                </Grid>
+            </StackPanel>
+
+        </Grid>
+
+        <Grid Grid.Column="2"  Grid.Row="1" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel x:Name="panel_settings" Visibility="Visible" Grid.ColumnSpan="2">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="120" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="160" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20"/>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+
+                    <Label x:Name="txt_loadstatus" Foreground="White" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="38" >SETTINGS LOADED</Label>
+                    
+                    <Label Foreground="White" Grid.Row="1" Grid.Column="1">Selected settings</Label>
+                    <Label x:Name="label_selected" Foreground="White" Grid.Row="1" Grid.Column="2">None</Label>
+                    <Label x:Name="lbl_change_btn_name" Foreground="White" Grid.Row="1" Grid.Column="3">Change button name</Label>
+                    <TextBox x:Name="tb_btn_name" Grid.Row="1" Grid.Column="4" Margin="0,5,0,0" HorizontalAlignment="Left" Height="23" TextWrapping="NoWrap" VerticalAlignment="Top" Width="120" />
+                    
+                    
+                    <Label Foreground="White" Grid.Row="3" Grid.Column="1" Margin="0,20,0,0">Mod folder path</Label>
+                    <TextBox  x:Name="tb_modfoldpath" Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="3" Margin="0,20,0,0" HorizontalAlignment="Left" Height="23" TextWrapping="NoWrap" VerticalAlignment="Top" Width="290" d:IsHidden="True" />
+                    <Label Foreground="White" x:Name="txt_modfoldpath"  Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="4" Margin="0,20,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" Width="400" >yxxcvxc</Label>
+                    <Button x:Name="btn_sel_mod_fold" Grid.Row="3" Grid.Column="4" Height="30" Width="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Background="Transparent" BorderBrush="Transparent" Visibility="Hidden" Click="btn_sel_mod_fold_Click">
+                        <Image Source="icons/icons8-folder-white.png" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left"></Image>
+                    </Button>
+                    
+                    <Label Foreground="White" Grid.Row="4" Grid.Column="1" Margin="0,5,0,0">Username</Label>
+                    <TextBox  x:Name="tb_username" Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="3" Margin="0,5,0,0" HorizontalAlignment="Left" Height="23" TextWrapping="NoWrap" VerticalAlignment="Top" Width="120" />
+                    <Label Foreground="White" x:Name="txt_username" Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="3" Margin="0,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="250" ></Label>
+                    
+                    <Label Foreground="White" Grid.Row="5" Grid.Column="1" Margin="0,5,0,0">Server name</Label>
+                    <TextBox x:Name="tb_servername" Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="3" Margin="0,5,0,0" HorizontalAlignment="Left" Height="23" TextWrapping="NoWrap" VerticalAlignment="Top" Width="120" />
+                    <Label Foreground="White" x:Name="txt_servername"  Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="3" Margin="0,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="250" >aaaaaa</Label>
+                    
+                    <Label Foreground="White" Grid.Row="6" Grid.Column="1" Margin="0,5,0,0">Server password</Label>
+                    <TextBox x:Name="tb_serverpass" Grid.Row="6" Grid.Column="2" Grid.ColumnSpan="3" Margin="0,5,0,0" HorizontalAlignment="Left" Height="23" TextWrapping="NoWrap" VerticalAlignment="Top" Width="200" />
+                    <Label Foreground="White" x:Name="txt_serverpass"  Grid.Row="6" Grid.Column="2" Grid.ColumnSpan="3" Margin="0,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="250" ></Label>
+                    
+                    <Button x:Name="btn_save" Grid.Row="7" Grid.Column="3" Margin="20" Height="35" Click="btn_save_Click">
+                        <Button.Effect>
+                            <DropShadowEffect Opacity="0.6"/>
+                        </Button.Effect>
+                        SAVE
+                    </Button>
+                    <Label x:Name="txt_savestat" Foreground="White" Grid.Row="7" Grid.Column="4" VerticalAlignment="Center">SAVED!</Label>
+                    <Label Foreground="White" Grid.Row="9" Grid.Column="1" Margin="0,30,0,0">Savegame folder path</Label>
+                    <TextBox x:Name="savegamepath_txtbox" Grid.Row="9" Grid.Column="2" Grid.ColumnSpan="3" Margin="0,30,0,0" HorizontalAlignment="Left" Height="23" TextWrapping="NoWrap" VerticalAlignment="Top" Width="290" d:IsHidden="True" />
+                    <Button x:Name="btn_sel_savegame_fold" Grid.Row="9" Grid.Column="4" Height="30" Width="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Background="Transparent" BorderBrush="Transparent" Visibility="Hidden" Click="btn_sel_savegame_fold_Click">
+                        <Image Source="icons/icons8-folder-white.png" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left"></Image>
+                    </Button>
+                    <Label Foreground="White" x:Name="txt_savegamepath"  Grid.Row="9" Grid.Column="2" Grid.ColumnSpan="4" Margin="0,30,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="430" ></Label>
+
+                    <Button x:Name="Btn_launch" Grid.Row="10" Grid.Column="4" VerticalAlignment="Bottom" HorizontalAlignment="Left" Padding="25,10" FontSize="18" FontWeight="Bold" Background="YellowGreen" Click="Btn_launch_Click">
+                        LAUNCH
+                    </Button>
+                </Grid>
+            </StackPanel>
+            <StackPanel x:Name="panel_credits" Visibility="Hidden" Grid.ColumnSpan="3" VerticalAlignment="Center" HorizontalAlignment="Left">
+                <TextBlock x:Name="txt_credits" Margin="0" VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="Visible" FontSize="36" Foreground="White">
+                CREDITS:
+                <LineBreak/>
+                @Jakub Vlcek - Copyright 2021
+                </TextBlock>
+            </StackPanel>
+
+        </Grid>
+
+        <Grid Grid.Column="3">
+
+        </Grid>
+
     </Grid>
 </Window>

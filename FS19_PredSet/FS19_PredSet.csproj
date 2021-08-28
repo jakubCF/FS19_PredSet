@@ -34,6 +34,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>fs19predsetlogo.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -55,6 +58,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Settings.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -93,6 +97,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="icons\icons-settings-white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="icons\icons8-settings-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="icons\icons8-mastercard-white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="icons\icons8-bookmark-white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="icons\fs19predsetlogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="icons\icons8-folder-white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="icons\fs19predsetlogo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="fs19predsetlogo.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

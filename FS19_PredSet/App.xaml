@@ -4,6 +4,67 @@
              xmlns:local="clr-namespace:FS19_PredSet"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+
+        <ControlTemplate x:Key="ButtonMenuTemplate" TargetType="{x:Type Button}">
+            <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
+                <ContentPresenter x:Name="contentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" ContentStringFormat="{TemplateBinding ContentStringFormat}" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+            </Border>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsDefaulted" Value="True">
+                    <Setter Property="Background" TargetName="border" Value="#FF22222D"/>
+                </Trigger>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <!--<Setter Property="Background" TargetName="border" Value="#FFFFFF"/>-->
+                    <Setter Property="BorderBrush" TargetName="border" Value="#FF3C7FB1"/>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="Background" TargetName="border" Value="#FF22222D"/>
+                    <Setter Property="BorderBrush" TargetName="border" Value="#FF2C628B"/>
+                </Trigger>
+                <Trigger Property="ToggleButton.IsChecked" Value="True">
+                    <Setter Property="Background" TargetName="border" Value="#FFBCDDEE"/>
+                    <Setter Property="BorderBrush" TargetName="border" Value="#FF245A83"/>
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Background" TargetName="border" Value="#FFF4F4F4"/>
+                    <Setter Property="BorderBrush" TargetName="border" Value="#FFADB2B5"/>
+                    <Setter Property="Foreground" Value="#FF838383"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+
+        <LinearGradientBrush x:Key="GrayBlueGradientBrush" StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="DarkGray" Offset="0" />
+            <GradientStop Color="#CCCCFF" Offset="0.5" />
+            <GradientStop Color="DarkGray" Offset="1" />
+        </LinearGradientBrush>
+
+        <GradientStopCollection x:Key="MyGlassGradientStopsResource">
+            <GradientStop Color="WhiteSmoke" Offset="0.2" />
+            <GradientStop Color="Transparent" Offset="0.4" />
+            <GradientStop Color="WhiteSmoke" Offset="0.5" />
+            <GradientStop Color="Transparent" Offset="0.75" />
+            <GradientStop Color="WhiteSmoke" Offset="0.9" />
+            <GradientStop Color="Transparent" Offset="1" />
+        </GradientStopCollection>
+        <LinearGradientBrush x:Key="MyGlassBrushResource"
+            StartPoint="0,0" EndPoint="3,3" Opacity="0.75"
+            GradientStops="{StaticResource MyGlassGradientStopsResource}" />
+        
+        <ControlTemplate x:Key="ButtonSettingTemplate" TargetType="{x:Type Button}">
+            <Grid Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" ClipToBounds="True">
+
+                <!-- Outer Rectangle with rounded corners. -->
+                <Rectangle x:Name="outerRectangle" HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch" Stroke="{TemplateBinding Background}"
+                    RadiusX="10" RadiusY="10" StrokeThickness="2" Fill="{StaticResource MyGlassBrushResource}" />
+
+                <DockPanel Name="myContentPresenterDockPanel">
+                    <TextBlock x:Name="myContentPresenter" Margin="10,5" HorizontalAlignment="Center" VerticalAlignment="Center"
+                        Text="{TemplateBinding  Content}" TextBlock.Foreground="Black" TextWrapping="Wrap" TextAlignment="Center" FontSize="13" />
+                </DockPanel>
+            </Grid>
+        </ControlTemplate>
+
     </Application.Resources>
 </Application>

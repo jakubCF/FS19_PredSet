@@ -30,4 +30,4 @@ FS19_PredSet is Windows application which allows you to predefine up to 7 differ
 
 ## Download ##
 
-Latest release is located in [./FS19_PredSet/bin/Release](../../FS19_PredSet/bin/Release)
+Latest release is located in [./FS19_PredSet/bin/Release](../../tree/master/FS19_PredSet/bin/Release)

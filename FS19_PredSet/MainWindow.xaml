@@ -134,13 +134,13 @@
                     
 
                     <Label Foreground="White" Grid.Row="3" Grid.Column="1" Margin="0,22,0,0">Mod folder path</Label>
-                    <Label Foreground="White" x:Name="txt_modfoldpath"  Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="4" Margin="0,20,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" Width="400" >yxxcvxc</Label>
+                    <Label Foreground="White" x:Name="txt_modfoldpath"  Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="4" Margin="0,20,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" Width="400" ></Label>
                     
                     <Label Foreground="White" Grid.Row="4" Grid.Column="1" Margin="0,5,0,0">Username</Label>
                     <Label Foreground="White" x:Name="txt_username" Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="3" Margin="0,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="250" ></Label>
 
                     <Label Foreground="White" Grid.Row="5" Grid.Column="1" Margin="0,5,0,0">Server name</Label>
-                    <Label Foreground="White" x:Name="txt_servername"  Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="3" Margin="0,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="250" >aaaaaa</Label>
+                    <Label Foreground="White" x:Name="txt_servername"  Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="3" Margin="0,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="250" ></Label>
 
                     <Label Foreground="White" Grid.Row="6" Grid.Column="1" Margin="0,5,0,0">Server password</Label>
                     <Label Foreground="White" x:Name="txt_serverpass"  Grid.Row="6" Grid.Column="2" Grid.ColumnSpan="3" Margin="0,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="250" ></Label>
@@ -154,7 +154,7 @@
                     </Button>
                 </Grid>
             </StackPanel>
-            <StackPanel x:Name="panel_settings" Visibility="Visible" Grid.ColumnSpan="2">
+            <StackPanel x:Name="panel_settings" Visibility="Visible" Grid.ColumnSpan="2" d:IsHidden="True">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="120" />

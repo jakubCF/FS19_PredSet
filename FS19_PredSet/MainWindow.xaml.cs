@@ -44,10 +44,10 @@ namespace FS19_PredSet
 
             txt_savestat.Content = "";
             label_selected.Content = "Current settings";
-            get_current_settings();
-            Load_button_names();
             Get_savegamepath();
-
+            _ = get_current_settings();
+            Load_button_names();
+           
             timer.Interval = TimeSpan.FromSeconds(2);
             timer.Tick += new EventHandler(Timer_Tick_loadstatusVisibility);
 
@@ -77,24 +77,34 @@ namespace FS19_PredSet
             }
 
         }
-        private void get_current_settings()
+        private bool get_current_settings()
         {
-            XmlDocument xmldoc = new XmlDocument();
-
-            xmldoc.Load("C:\\Users\\JAK4GMZ\\Documents\\My Games\\FarmingSimulator2019\\gameSettings.xml");
-
-            XmlNodeList moddir = xmldoc.GetElementsByTagName("modsDirectoryOverride");
-
-            if (moddir[0].Attributes["active"].Value == "true")
+            if (Properties.Settings.Default["savegamepath"].ToString() != "")
             {
-                txt_modfoldpath.Content = moddir[0].Attributes["directory"].Value;
-                txt_serverpass.Content = xmldoc.GetElementsByTagName("joinGame")[0].Attributes["password"].Value;
-                txt_servername.Content = xmldoc.GetElementsByTagName("joinGame")[0].Attributes["serverName"].Value;
-                txt_username.Content = xmldoc.GetElementsByTagName("player")[0].Attributes["name"].Value;
+                XmlDocument xmldoc = new XmlDocument();
+                try
+                {
+                    xmldoc.Load(System.IO.Path.Combine(Properties.Settings.Default.savegamepath, "gameSettings.xml"));
+                }
+                catch (Exception)
+                {
+                    _ = MessageBox.Show("Something went wrong while reading gamesettings.xml");
+                    return false;
+                }
 
+                XmlNodeList moddir = xmldoc.GetElementsByTagName("modsDirectoryOverride");
+
+                if (moddir[0].Attributes["active"].Value == "true")
+                {
+                    txt_modfoldpath.Content = moddir[0].Attributes["directory"].Value;
+                    txt_serverpass.Content = xmldoc.GetElementsByTagName("joinGame")[0].Attributes["password"].Value;
+                    txt_servername.Content = xmldoc.GetElementsByTagName("joinGame")[0].Attributes["serverName"].Value;
+                    txt_username.Content = xmldoc.GetElementsByTagName("player")[0].Attributes["name"].Value;
+
+                }
             }
-            
 
+            return true;
         }
         private void credits_btn_Click(object sender, RoutedEventArgs e)
         {
@@ -216,8 +226,18 @@ namespace FS19_PredSet
                     moddir[0].Attributes["active"].Value = "true";
                     moddir[0].Attributes["directory"].Value = Properties.Settings.Default["set" + selected_button.ToString() + "modpath"].ToString();
                 }
-                xmldoc.GetElementsByTagName("joinGame")[0].Attributes["password"].Value = Properties.Settings.Default["set" + selected_button.ToString() + "serverpass"].ToString();
-                xmldoc.GetElementsByTagName("joinGame")[0].Attributes["serverName"].Value = Properties.Settings.Default["set" + selected_button.ToString() + "servername"].ToString();
+                try
+                {
+                    xmldoc.GetElementsByTagName("joinGame")[0].Attributes["password"].Value = Properties.Settings.Default["set" + selected_button.ToString() + "serverpass"].ToString();
+                    xmldoc.GetElementsByTagName("joinGame")[0].Attributes["serverName"].Value = Properties.Settings.Default["set" + selected_button.ToString() + "servername"].ToString();
+
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Couldn't load server name and password. Try to join MP in game first.");
+                    return false;
+                }
+                
                 xmldoc.GetElementsByTagName("player")[0].Attributes["name"].Value = Properties.Settings.Default["set" + selected_button.ToString() + "username"].ToString();
 
                 xmldoc.Save(System.IO.Path.Combine(Properties.Settings.Default.savegamepath, "gameSettings.xml"));

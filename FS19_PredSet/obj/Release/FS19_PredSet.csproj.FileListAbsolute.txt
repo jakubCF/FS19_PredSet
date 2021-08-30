@@ -13,4 +13,3 @@ C:\Users\JAK4GMZ\GitHub\FS19_PredSet\FS19_PredSet\obj\Release\FS19_PredSet.cspro
 C:\Users\JAK4GMZ\GitHub\FS19_PredSet\FS19_PredSet\obj\Release\FS19_PredSet.csproj.CoreCompileInputs.cache
 C:\Users\JAK4GMZ\GitHub\FS19_PredSet\FS19_PredSet\obj\Release\FS19_PredSet.exe
 C:\Users\JAK4GMZ\GitHub\FS19_PredSet\FS19_PredSet\obj\Release\FS19_PredSet.pdb
-C:\Users\JAK4GMZ\GitHub\FS19_PredSet\FS19_PredSet\obj\Release\FS19_PredSet.csproj.AssemblyReference.cache

@@ -1,7 +1,6 @@
 C:\Users\JAK4GMZ\GitHub\FS19_PredSet\FS19_PredSet\bin\Debug\FS19_PredSet.exe.config
 C:\Users\JAK4GMZ\GitHub\FS19_PredSet\FS19_PredSet\bin\Debug\FS19_PredSet.exe
 C:\Users\JAK4GMZ\GitHub\FS19_PredSet\FS19_PredSet\bin\Debug\FS19_PredSet.pdb
-C:\Users\JAK4GMZ\GitHub\FS19_PredSet\FS19_PredSet\obj\Debug\FS19_PredSet.csproj.AssemblyReference.cache
 C:\Users\JAK4GMZ\GitHub\FS19_PredSet\FS19_PredSet\obj\Debug\MainWindow.g.cs
 C:\Users\JAK4GMZ\GitHub\FS19_PredSet\FS19_PredSet\obj\Debug\App.g.cs
 C:\Users\JAK4GMZ\GitHub\FS19_PredSet\FS19_PredSet\obj\Debug\FS19_PredSet_MarkupCompile.cache

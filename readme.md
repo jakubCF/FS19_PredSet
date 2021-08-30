@@ -28,6 +28,13 @@ FS19_PredSet is Windows application which allows you to predefine up to 7 differ
 * Server name used in search
 * Server password
 
+## Screenshots ##
+
+![Main screen](https://github.com/jakubCF/FS19_PredSet/blob/master/Screenshots/screenshot1.png "Main screen")
+
+![Settings screen](https://github.com/jakubCF/FS19_PredSet/blob/master/Screenshots/screenshot2.png "Settings screen")
+
 ## Download ##
 
-Latest release is located in [./FS19_PredSet/bin/Release](../../tree/master/FS19_PredSet/bin/Release)
+Latest release is located here [./FS19_PredSet/bin/Release](../../tree/master/FS19_PredSet/bin/Release)
+

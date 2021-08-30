@@ -1,0 +1,16 @@
+C:\Users\JAK4GMZ\GitHub\FS19_PredSet\FS19_PredSet\bin\Release\FS19_PredSet.exe.config
+C:\Users\JAK4GMZ\GitHub\FS19_PredSet\FS19_PredSet\bin\Release\FS19_PredSet.exe
+C:\Users\JAK4GMZ\GitHub\FS19_PredSet\FS19_PredSet\bin\Release\FS19_PredSet.pdb
+C:\Users\JAK4GMZ\GitHub\FS19_PredSet\FS19_PredSet\obj\Release\MainWindow.g.cs
+C:\Users\JAK4GMZ\GitHub\FS19_PredSet\FS19_PredSet\obj\Release\App.g.cs
+C:\Users\JAK4GMZ\GitHub\FS19_PredSet\FS19_PredSet\obj\Release\FS19_PredSet_MarkupCompile.cache
+C:\Users\JAK4GMZ\GitHub\FS19_PredSet\FS19_PredSet\obj\Release\FS19_PredSet_MarkupCompile.lref
+C:\Users\JAK4GMZ\GitHub\FS19_PredSet\FS19_PredSet\obj\Release\App.baml
+C:\Users\JAK4GMZ\GitHub\FS19_PredSet\FS19_PredSet\obj\Release\MainWindow.baml
+C:\Users\JAK4GMZ\GitHub\FS19_PredSet\FS19_PredSet\obj\Release\FS19_PredSet.g.resources
+C:\Users\JAK4GMZ\GitHub\FS19_PredSet\FS19_PredSet\obj\Release\FS19_PredSet.Properties.Resources.resources
+C:\Users\JAK4GMZ\GitHub\FS19_PredSet\FS19_PredSet\obj\Release\FS19_PredSet.csproj.GenerateResource.cache
+C:\Users\JAK4GMZ\GitHub\FS19_PredSet\FS19_PredSet\obj\Release\FS19_PredSet.csproj.CoreCompileInputs.cache
+C:\Users\JAK4GMZ\GitHub\FS19_PredSet\FS19_PredSet\obj\Release\FS19_PredSet.exe
+C:\Users\JAK4GMZ\GitHub\FS19_PredSet\FS19_PredSet\obj\Release\FS19_PredSet.pdb
+C:\Users\JAK4GMZ\GitHub\FS19_PredSet\FS19_PredSet\obj\Release\FS19_PredSet.csproj.AssemblyReference.cache

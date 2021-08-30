@@ -32,17 +32,14 @@ namespace FS19_PredSet
         {
             InitializeComponent();
 
-            tb_btn_name.Visibility = Visibility.Hidden;
-            btn_sel_savegame_fold.Visibility = Visibility.Hidden;
-            btn_save.Visibility = Visibility.Hidden;
-            lbl_change_btn_name.Visibility = Visibility.Hidden;
-            txt_loadstatus.Visibility = Visibility.Hidden;
+            
 
             settings_button.Background = Brushes.Transparent;
             Text_box_change_state(true);
 
             panel_credits.Visibility = Visibility.Hidden;
-            panel_settings.Visibility = Visibility.Visible;
+            panel_settings.Visibility = Visibility.Hidden;
+            panel_view.Visibility = Visibility.Visible;
             buttons_preddef.Visibility = Visibility.Visible;
 
             txt_savestat.Content = "";
@@ -107,15 +104,13 @@ namespace FS19_PredSet
 
             }
 
-            btn_sel_savegame_fold.Visibility = Visibility.Hidden;
-            btn_save.Visibility = Visibility.Hidden;
-            lbl_change_btn_name.Visibility = Visibility.Hidden;
 
             settings_button.Background = Brushes.Transparent;
             Text_box_change_state(true);
           
             panel_credits.Visibility = Visibility.Visible;
             panel_settings.Visibility = Visibility.Hidden;
+            panel_view.Visibility = Visibility.Hidden;
             buttons_preddef.Visibility = Visibility.Hidden;
 
         }
@@ -127,16 +122,12 @@ namespace FS19_PredSet
             }
 
 
-            tb_btn_name.Visibility = Visibility.Hidden;
-            btn_sel_savegame_fold.Visibility = Visibility.Hidden;
-            btn_save.Visibility = Visibility.Hidden;
-            lbl_change_btn_name.Visibility = Visibility.Hidden;
-
             settings_button.Background = Brushes.Transparent;
             Text_box_change_state(true);
           
             panel_credits.Visibility = Visibility.Hidden;
-            panel_settings.Visibility = Visibility.Visible;
+            panel_settings.Visibility = Visibility.Hidden;
+            panel_view.Visibility = Visibility.Visible;
             buttons_preddef.Visibility = Visibility.Visible;
 
 
@@ -146,10 +137,9 @@ namespace FS19_PredSet
             if (settings_stat)
             {
                 settings_stat = false;
-                btn_sel_savegame_fold.Visibility = Visibility.Hidden;
-                btn_save.Visibility = Visibility.Hidden;
-                lbl_change_btn_name.Visibility = Visibility.Hidden;
-                tb_btn_name.Visibility = Visibility.Hidden;
+                panel_settings.Visibility = Visibility.Hidden;
+                panel_view.Visibility = Visibility.Visible;
+                panel_credits.Visibility = Visibility.Hidden;
 
                 settings_button.Background = Brushes.Transparent;
                 Text_box_change_state(true);
@@ -159,19 +149,16 @@ namespace FS19_PredSet
             else
             {
                 settings_stat = true;
-                btn_sel_savegame_fold.Visibility = Visibility.Visible;
-                btn_save.Visibility = Visibility.Visible;
-                lbl_change_btn_name.Visibility = Visibility.Visible;
-                tb_btn_name.Visibility = Visibility.Visible;
+                panel_settings.Visibility = Visibility.Visible;
+                panel_view.Visibility = Visibility.Hidden;
+                panel_credits.Visibility = Visibility.Hidden;
+
 
                 settings_button.Background = settings_button.Background == Brushes.Red ? (SolidColorBrush)(new BrushConverter().ConvertFrom("#FF22222D")) : Brushes.Red;
                 //enable textboxes for editing
                 Text_box_change_state(false);
             }
 
-
-            panel_credits.Visibility = Visibility.Hidden;
-            panel_settings.Visibility = Visibility.Visible;
             buttons_preddef.Visibility = Visibility.Visible;
 
 
@@ -197,12 +184,19 @@ namespace FS19_PredSet
 
             savegamepath_txtbox.Text = Properties.Settings.Default["savegamepath"].ToString();
         }
-        private void Load_settings_to_textboxes()
+        private void Load_settings_to_labels()
         {
             txt_modfoldpath.Content = Properties.Settings.Default["set" + selected_button.ToString() + "modpath"].ToString();
             txt_servername.Content = Properties.Settings.Default["set" + selected_button.ToString() + "servername"].ToString();
             txt_serverpass.Content = Properties.Settings.Default["set" + selected_button.ToString() + "serverpass"].ToString();
             txt_username.Content = Properties.Settings.Default["set" + selected_button.ToString() + "username"].ToString();
+        }
+        private void Load_current_to_tb()
+        {
+            tb_modfoldpath.Text = Properties.Settings.Default["set" + selected_button.ToString() + "modpath"].ToString();
+            tb_servername.Text = Properties.Settings.Default["set" + selected_button.ToString() + "servername"].ToString();
+            tb_serverpass.Text = Properties.Settings.Default["set" + selected_button.ToString() + "serverpass"].ToString();
+            tb_username.Text = Properties.Settings.Default["set" + selected_button.ToString() + "username"].ToString();
         }
         private bool Load_settings_to_xml()
         {
@@ -251,36 +245,41 @@ namespace FS19_PredSet
             label_selected.Content = "Current settings";
             txt_savegamepath.Content = Properties.Settings.Default.savegamepath;
             selected_button = 0;
+            label_selected1.Content = "";
+            tb_modfoldpath.Text = "";
+            tb_servername.Text = "";
+            tb_serverpass.Text = "";
+            tb_username.Text = "";
             get_current_settings();
 
-            if (new_state)
-            {
-                tb_modfoldpath.Visibility = Visibility.Hidden;
-                btn_sel_mod_fold.Visibility = Visibility.Hidden;
-                tb_username.Visibility = Visibility.Hidden;
-                tb_servername.Visibility = Visibility.Hidden;
-                tb_serverpass.Visibility = Visibility.Hidden;
-                txt_modfoldpath.Visibility = Visibility.Visible;
-                txt_username.Visibility = Visibility.Visible;
-                txt_servername.Visibility = Visibility.Visible;
-                txt_serverpass.Visibility = Visibility.Visible;
-                savegamepath_txtbox.Visibility = Visibility.Hidden;
-                txt_savegamepath.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                tb_modfoldpath.Visibility = Visibility.Visible;
-                btn_sel_mod_fold.Visibility = Visibility.Visible;
-                tb_username.Visibility = Visibility.Visible;
-                tb_servername.Visibility = Visibility.Visible;
-                tb_serverpass.Visibility = Visibility.Visible;
-                txt_modfoldpath.Visibility = Visibility.Hidden;
-                txt_username.Visibility = Visibility.Hidden;
-                txt_servername.Visibility = Visibility.Hidden;
-                txt_serverpass.Visibility = Visibility.Hidden;
-                savegamepath_txtbox.Visibility = Visibility.Visible;
-                txt_savegamepath.Visibility = Visibility.Hidden;
-            }
+            //if (new_state)
+            //{
+            //    tb_modfoldpath.Visibility = Visibility.Hidden;
+            //    btn_sel_mod_fold.Visibility = Visibility.Hidden;
+            //    tb_username.Visibility = Visibility.Hidden;
+            //    tb_servername.Visibility = Visibility.Hidden;
+            //    tb_serverpass.Visibility = Visibility.Hidden;
+            //    txt_modfoldpath.Visibility = Visibility.Visible;
+            //    txt_username.Visibility = Visibility.Visible;
+            //    txt_servername.Visibility = Visibility.Visible;
+            //    txt_serverpass.Visibility = Visibility.Visible;
+            //    savegamepath_txtbox.Visibility = Visibility.Hidden;
+            //    txt_savegamepath.Visibility = Visibility.Visible;
+            //}
+            //else
+            //{
+            //    tb_modfoldpath.Visibility = Visibility.Visible;
+            //    btn_sel_mod_fold.Visibility = Visibility.Visible;
+            //    tb_username.Visibility = Visibility.Visible;
+            //    tb_servername.Visibility = Visibility.Visible;
+            //    tb_serverpass.Visibility = Visibility.Visible;
+            //    txt_modfoldpath.Visibility = Visibility.Hidden;
+            //    txt_username.Visibility = Visibility.Hidden;
+            //    txt_servername.Visibility = Visibility.Hidden;
+            //    txt_serverpass.Visibility = Visibility.Hidden;
+            //    savegamepath_txtbox.Visibility = Visibility.Visible;
+            //    txt_savegamepath.Visibility = Visibility.Hidden;
+            //}
         }
 
 
@@ -415,15 +414,22 @@ namespace FS19_PredSet
         {
             selected_button = 1;
             label_selected.Content = btn_1set.Content;
-
-            Load_settings_to_textboxes();
+            label_selected1.Content = btn_1set.Content;
 
             if (!settings_stat)
             {
+                Load_settings_to_labels();
                 if (Load_settings_to_xml())
                 {
                     txt_loadstatus.Visibility = Visibility.Visible;
                     timer.Start();
+                }
+            }
+            else
+            {
+                if(tb_modfoldpath.Text == "")
+                {
+                    Load_current_to_tb();
                 }
             }
 
@@ -433,15 +439,22 @@ namespace FS19_PredSet
         {
             selected_button = 2;
             label_selected.Content = btn_2set.Content;
-
-            Load_settings_to_textboxes();
+            label_selected1.Content = btn_2set.Content;
 
             if (!settings_stat)
             {
+                Load_settings_to_labels();
                 if (Load_settings_to_xml())
                 {
                     txt_loadstatus.Visibility = Visibility.Visible;
                     timer.Start();
+                }
+            }
+            else
+            {
+                if (tb_modfoldpath.Text == "")
+                {
+                    Load_current_to_tb();
                 }
             }
 
@@ -450,15 +463,22 @@ namespace FS19_PredSet
         {
             selected_button = 3;
             label_selected.Content = btn_3set.Content;
-
-            Load_settings_to_textboxes();
+            label_selected1.Content = btn_3set.Content;
 
             if (!settings_stat)
             {
+                Load_settings_to_labels();
                 if (Load_settings_to_xml())
                 {
                     txt_loadstatus.Visibility = Visibility.Visible;
                     timer.Start();
+                }
+            }
+            else
+            {
+                if (tb_modfoldpath.Text == "")
+                {
+                    Load_current_to_tb();
                 }
             }
         }
@@ -467,15 +487,22 @@ namespace FS19_PredSet
         {
             selected_button = 4;
             label_selected.Content = btn_4set.Content;
-
-            Load_settings_to_textboxes();
+            label_selected1.Content = btn_4set.Content;
 
             if (!settings_stat)
             {
+                Load_settings_to_labels();
                 if (Load_settings_to_xml())
                 {
                     txt_loadstatus.Visibility = Visibility.Visible;
                     timer.Start();
+                }
+            }
+            else
+            {
+                if (tb_modfoldpath.Text == "")
+                {
+                    Load_current_to_tb();
                 }
             }
         }
@@ -483,15 +510,24 @@ namespace FS19_PredSet
         {
             selected_button = 5;
             label_selected.Content = btn_5set.Content;
+            label_selected1.Content = btn_5set.Content;
 
-            Load_settings_to_textboxes();
+            Load_settings_to_labels();
 
             if (!settings_stat)
             {
+                Load_settings_to_labels();
                 if (Load_settings_to_xml())
                 {
                     txt_loadstatus.Visibility = Visibility.Visible;
                     timer.Start();
+                }
+            }
+            else
+            {
+                if (tb_modfoldpath.Text == "")
+                {
+                    Load_current_to_tb();
                 }
             }
         }
@@ -499,15 +535,22 @@ namespace FS19_PredSet
         {
             selected_button = 6;
             label_selected.Content = btn_6set.Content;
-
-            Load_settings_to_textboxes();
+            label_selected1.Content = btn_6set.Content;
 
             if (!settings_stat)
             {
+                Load_settings_to_labels();
                 if (Load_settings_to_xml())
                 {
                     txt_loadstatus.Visibility = Visibility.Visible;
                     timer.Start();
+                }
+            }
+            else
+            {
+                if (tb_modfoldpath.Text == "")
+                {
+                    Load_current_to_tb();
                 }
             }
         }
@@ -516,15 +559,22 @@ namespace FS19_PredSet
         {
             selected_button = 7;
             label_selected.Content = btn_7set.Content;
-
-            Load_settings_to_textboxes();
+            label_selected1.Content = btn_7set.Content;
 
             if (!settings_stat)
             {
+                Load_settings_to_labels();
                 if (Load_settings_to_xml())
                 {
                     txt_loadstatus.Visibility = Visibility.Visible;
                     timer.Start();
+                }
+            }
+            else
+            {
+                if (tb_modfoldpath.Text == "")
+                {
+                    Load_current_to_tb();
                 }
             }
         }

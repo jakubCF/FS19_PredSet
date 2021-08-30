@@ -104,6 +104,56 @@
                 <ColumnDefinition Width="auto"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
+            <StackPanel x:Name="panel_view" Visibility="Visible" Grid.ColumnSpan="2">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="120" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="160" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20"/>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+
+                    <Label x:Name="txt_loadstatus" Foreground="White" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="38" Visibility="Hidden">SETTINGS LOADED</Label>
+
+                    <Label Foreground="White" Grid.Row="1" Grid.Column="1">Selected settings</Label>
+                    <Label x:Name="label_selected" Foreground="White" Grid.Row="1" Grid.Column="2">None</Label>
+                    
+
+                    <Label Foreground="White" Grid.Row="3" Grid.Column="1" Margin="0,22,0,0">Mod folder path</Label>
+                    <Label Foreground="White" x:Name="txt_modfoldpath"  Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="4" Margin="0,20,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" Width="400" >yxxcvxc</Label>
+                    
+                    <Label Foreground="White" Grid.Row="4" Grid.Column="1" Margin="0,5,0,0">Username</Label>
+                    <Label Foreground="White" x:Name="txt_username" Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="3" Margin="0,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="250" ></Label>
+
+                    <Label Foreground="White" Grid.Row="5" Grid.Column="1" Margin="0,5,0,0">Server name</Label>
+                    <Label Foreground="White" x:Name="txt_servername"  Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="3" Margin="0,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="250" >aaaaaa</Label>
+
+                    <Label Foreground="White" Grid.Row="6" Grid.Column="1" Margin="0,5,0,0">Server password</Label>
+                    <Label Foreground="White" x:Name="txt_serverpass"  Grid.Row="6" Grid.Column="2" Grid.ColumnSpan="3" Margin="0,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="250" ></Label>
+
+                    
+                    <Label Foreground="White" Grid.Row="9" Grid.Column="1" Margin="0,105,0,0">Savegame folder path</Label>
+                    <Label Foreground="White" x:Name="txt_savegamepath"  Grid.Row="9" Grid.Column="2" Grid.ColumnSpan="4" Margin="0,105,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="430" ></Label>
+
+                    <Button x:Name="Btn_launch" Grid.Row="10" Grid.Column="4" VerticalAlignment="Bottom" HorizontalAlignment="Left" Padding="25,10" Margin="0,0,0,20" FontSize="18" FontWeight="Bold" Background="YellowGreen" Click="Btn_launch_Click">
+                        LAUNCH
+                    </Button>
+                </Grid>
+            </StackPanel>
             <StackPanel x:Name="panel_settings" Visibility="Visible" Grid.ColumnSpan="2">
                 <Grid>
                     <Grid.RowDefinitions>
@@ -127,32 +177,27 @@
                         <ColumnDefinition />
                     </Grid.ColumnDefinitions>
 
-                    <Label x:Name="txt_loadstatus" Foreground="White" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="38" >SETTINGS LOADED</Label>
                     
                     <Label Foreground="White" Grid.Row="1" Grid.Column="1">Selected settings</Label>
-                    <Label x:Name="label_selected" Foreground="White" Grid.Row="1" Grid.Column="2">None</Label>
+                    <Label x:Name="label_selected1" Foreground="White" Grid.Row="1" Grid.Column="2">None</Label>
                     <Label x:Name="lbl_change_btn_name" Foreground="White" Grid.Row="1" Grid.Column="3">Change button name</Label>
                     <TextBox x:Name="tb_btn_name" Grid.Row="1" Grid.Column="4" Margin="0,5,0,0" HorizontalAlignment="Left" Height="23" TextWrapping="NoWrap" VerticalAlignment="Top" Width="120" />
                     
                     
                     <Label Foreground="White" Grid.Row="3" Grid.Column="1" Margin="0,20,0,0">Mod folder path</Label>
-                    <TextBox  x:Name="tb_modfoldpath" Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="3" Margin="0,20,0,0" HorizontalAlignment="Left" Height="23" TextWrapping="NoWrap" VerticalAlignment="Top" Width="290" d:IsHidden="True" />
-                    <Label Foreground="White" x:Name="txt_modfoldpath"  Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="4" Margin="0,20,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" Width="400" >yxxcvxc</Label>
-                    <Button x:Name="btn_sel_mod_fold" Grid.Row="3" Grid.Column="4" Height="30" Width="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Background="Transparent" BorderBrush="Transparent" Visibility="Hidden" Click="btn_sel_mod_fold_Click">
+                    <TextBox  x:Name="tb_modfoldpath" Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="3" Margin="0,20,0,0" HorizontalAlignment="Left" Height="23" TextWrapping="NoWrap" VerticalAlignment="Top" Width="290" />
+                    <Button x:Name="btn_sel_mod_fold" Grid.Row="3" Grid.Column="4" Height="30" Width="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Background="Transparent" BorderBrush="Transparent" Click="btn_sel_mod_fold_Click">
                         <Image Source="icons/icons8-folder-white.png" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left"></Image>
                     </Button>
                     
                     <Label Foreground="White" Grid.Row="4" Grid.Column="1" Margin="0,5,0,0">Username</Label>
                     <TextBox  x:Name="tb_username" Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="3" Margin="0,5,0,0" HorizontalAlignment="Left" Height="23" TextWrapping="NoWrap" VerticalAlignment="Top" Width="120" />
-                    <Label Foreground="White" x:Name="txt_username" Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="3" Margin="0,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="250" ></Label>
                     
                     <Label Foreground="White" Grid.Row="5" Grid.Column="1" Margin="0,5,0,0">Server name</Label>
                     <TextBox x:Name="tb_servername" Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="3" Margin="0,5,0,0" HorizontalAlignment="Left" Height="23" TextWrapping="NoWrap" VerticalAlignment="Top" Width="120" />
-                    <Label Foreground="White" x:Name="txt_servername"  Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="3" Margin="0,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="250" >aaaaaa</Label>
                     
                     <Label Foreground="White" Grid.Row="6" Grid.Column="1" Margin="0,5,0,0">Server password</Label>
                     <TextBox x:Name="tb_serverpass" Grid.Row="6" Grid.Column="2" Grid.ColumnSpan="3" Margin="0,5,0,0" HorizontalAlignment="Left" Height="23" TextWrapping="NoWrap" VerticalAlignment="Top" Width="200" />
-                    <Label Foreground="White" x:Name="txt_serverpass"  Grid.Row="6" Grid.Column="2" Grid.ColumnSpan="3" Margin="0,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="250" ></Label>
                     
                     <Button x:Name="btn_save" Grid.Row="7" Grid.Column="3" Margin="20" Height="35" Click="btn_save_Click">
                         <Button.Effect>
@@ -162,15 +207,12 @@
                     </Button>
                     <Label x:Name="txt_savestat" Foreground="White" Grid.Row="7" Grid.Column="4" VerticalAlignment="Center">SAVED!</Label>
                     <Label Foreground="White" Grid.Row="9" Grid.Column="1" Margin="0,30,0,0">Savegame folder path</Label>
-                    <TextBox x:Name="savegamepath_txtbox" Grid.Row="9" Grid.Column="2" Grid.ColumnSpan="3" Margin="0,30,0,0" HorizontalAlignment="Left" Height="23" TextWrapping="NoWrap" VerticalAlignment="Top" Width="290" d:IsHidden="True" />
-                    <Button x:Name="btn_sel_savegame_fold" Grid.Row="9" Grid.Column="4" Height="30" Width="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Background="Transparent" BorderBrush="Transparent" Visibility="Hidden" Click="btn_sel_savegame_fold_Click">
+                    <TextBox x:Name="savegamepath_txtbox" Grid.Row="9" Grid.Column="2" Grid.ColumnSpan="3" Margin="0,30,0,0" HorizontalAlignment="Left" Height="23" TextWrapping="NoWrap" VerticalAlignment="Top" Width="290"  />
+                    <Button x:Name="btn_sel_savegame_fold" Grid.Row="9" Grid.Column="4" Height="30" Width="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Background="Transparent" BorderBrush="Transparent" Click="btn_sel_savegame_fold_Click">
                         <Image Source="icons/icons8-folder-white.png" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left"></Image>
                     </Button>
-                    <Label Foreground="White" x:Name="txt_savegamepath"  Grid.Row="9" Grid.Column="2" Grid.ColumnSpan="4" Margin="0,30,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="430" ></Label>
-
-                    <Button x:Name="Btn_launch" Grid.Row="10" Grid.Column="4" VerticalAlignment="Bottom" HorizontalAlignment="Left" Padding="25,10" FontSize="18" FontWeight="Bold" Background="YellowGreen" Click="Btn_launch_Click">
-                        LAUNCH
-                    </Button>
+                    
+                    
                 </Grid>
             </StackPanel>
             <StackPanel x:Name="panel_credits" Visibility="Hidden" Grid.ColumnSpan="3" VerticalAlignment="Center" HorizontalAlignment="Left">

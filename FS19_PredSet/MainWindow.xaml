@@ -145,8 +145,8 @@
                     <Label Foreground="White" Grid.Row="6" Grid.Column="1" Margin="0,5,0,0">Server password</Label>
                     <Label Foreground="White" x:Name="txt_serverpass"  Grid.Row="6" Grid.Column="2" Grid.ColumnSpan="3" Margin="0,5,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="250" ></Label>
 
-                    
-                    <Label Foreground="White" Grid.Row="9" Grid.Column="1" Margin="0,105,0,0">Savegame folder path</Label>
+
+                    <Label Foreground="White" Grid.Row="9" Grid.Column="1" Margin="0,105,0,0">GameSettings folder path</Label>
                     <Label Foreground="White" x:Name="txt_savegamepath"  Grid.Row="9" Grid.Column="2" Grid.ColumnSpan="4" Margin="0,105,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="430" ></Label>
 
                     <Button x:Name="Btn_launch" Grid.Row="10" Grid.Column="4" VerticalAlignment="Bottom" HorizontalAlignment="Left" Padding="25,10" Margin="0,0,0,20" FontSize="18" FontWeight="Bold" Background="YellowGreen" Click="Btn_launch_Click">
@@ -206,7 +206,7 @@
                         SAVE
                     </Button>
                     <Label x:Name="txt_savestat" Foreground="White" Grid.Row="7" Grid.Column="4" VerticalAlignment="Center">SAVED!</Label>
-                    <Label Foreground="White" Grid.Row="9" Grid.Column="1" Margin="0,30,0,0">Savegame folder path</Label>
+                    <Label Foreground="White" Grid.Row="9" Grid.Column="1" Margin="0,30,0,0">GameSettings folder path</Label>
                     <TextBox x:Name="savegamepath_txtbox" Grid.Row="9" Grid.Column="2" Grid.ColumnSpan="3" Margin="0,30,0,0" HorizontalAlignment="Left" Height="23" TextWrapping="NoWrap" VerticalAlignment="Top" Width="290"  />
                     <Button x:Name="btn_sel_savegame_fold" Grid.Row="9" Grid.Column="4" Height="30" Width="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Background="Transparent" BorderBrush="Transparent" Click="btn_sel_savegame_fold_Click">
                         <Image Source="icons/icons8-folder-white.png" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left"></Image>
